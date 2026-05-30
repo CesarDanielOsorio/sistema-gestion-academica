@@ -1,0 +1,49 @@
+name: CI/CD Pipeline
+
+# Se ejecuta en cada push y pull request a las ramas principales.
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build-and-test:
+    name: Build, Lint y Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Pruebas unitarias + cobertura
+        run: npm run coverage
+
+      - name: Build de producción
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+      - name: Publicar reporte de cobertura
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          if-no-files-found: ignore
+
+# Nota: el DESPLIEGUE (deploy) lo realiza Netlify mediante su integración continua
+# con GitHub: cada push/merge a `main` dispara automáticamente un build y deploy
+# en Netlify (Continuous Deployment). Así se cubre la etapa de Deploy del pipeline.

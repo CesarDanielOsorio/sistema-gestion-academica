@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mis Calificaciones | The Academic Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eaeff1",
+                        "on-tertiary-fixed-variant": "#52506b",
+                        "tertiary-fixed-dim": "#c7c3e3",
+                        "on-tertiary-fixed": "#35334d",
+                        "outline-variant": "#abb3b7",
+                        "surface-container-high": "#e3e9ec",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#0c0f10",
+                        "secondary-fixed-dim": "#d4d4db",
+                        "primary-dim": "#1151a0",
+                        "primary-container": "#d7e2ff",
+                        "error-dim": "#4e0309",
+                        "outline": "#737c7f",
+                        "tertiary-container": "#d5d1f2",
+                        "primary-fixed": "#d7e2ff",
+                        "error-container": "#fe8983",
+                        "inverse-on-surface": "#9b9d9e",
+                        "primary": "#255dad",
+                        "on-secondary-fixed-variant": "#5a5b61",
+                        "on-error-container": "#752121",
+                        "on-background": "#2b3437",
+                        "error": "#9f403d",
+                        "background": "#f8f9fa",
+                        "secondary-container": "#e2e2e9",
+                        "on-tertiary-container": "#484661",
+                        "tertiary": "#5e5c78",
+                        "surface-dim": "#d1dce0",
+                        "secondary": "#5d5f65",
+                        "on-secondary": "#f9f8ff",
+                        "on-primary-fixed-variant": "#215aaa",
+                        "on-tertiary": "#fcf7ff",
+                        "on-primary-fixed": "#003e81",
+                        "surface-container-low": "#f1f4f6",
+                        "inverse-primary": "#73a3f8",
+                        "surface": "#f8f9fa",
+                        "secondary-dim": "#515359",
+                        "secondary-fixed": "#e2e2e9",
+                        "surface-tint": "#255dad",
+                        "on-error": "#fff7f6",
+                        "primary-fixed-dim": "#c1d5ff",
+                        "on-secondary-fixed": "#3d3f45",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-surface": "#2b3437",
+                        "on-primary-container": "#0f509f",
+                        "tertiary-fixed": "#d5d1f2",
+                        "tertiary-dim": "#52506b",
+                        "surface-variant": "#dbe4e7",
+                        "on-primary": "#f7f7ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-surface-variant": "#586064",
+                        "on-secondary-container": "#505157"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+        }
+        .tonal-lift {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .tonal-lift:hover {
+            transform: translateY(-2px);
+            background-color: #ffffff;
+            box-shadow: 0 20px 40px rgba(43, 52, 55, 0.04);
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-72 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-dim flex flex-col h-full py-8 z-50">
+<div class="px-8 mb-12">
+<h1 class="font-headline text-xl font-bold text-on-surface dark:text-inverse-on-surface tracking-tight">The Academic Atelier</h1>
+<p class="font-body text-xs text-on-surface-variant opacity-70">University Portal</p>
+</div>
+<nav class="flex-1 space-y-2 px-0">
+<!-- Navigation Items Mapping -->
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body text-body-md">Panel</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+<span class="font-body text-body-md">Inscripción</span>
+</a>
+<!-- Active State: Notas -->
+<a class="flex items-center gap-3 px-6 py-4 bg-surface-container-lowest dark:bg-surface-container-high text-primary dark:text-inverse-primary font-bold rounded-l-full scale-95 active:scale-90 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="grade" style="font-variation-settings: 'FILL' 1;">grade</span>
+<span class="font-body text-body-md">Notas</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-body text-body-md">Pensum</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-body text-body-md">Constancias</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="p-4 bg-surface-container-lowest/50 rounded-xl flex items-center gap-3">
+<img alt="Student Profile Photo" class="w-10 h-10 rounded-full object-cover border border-outline-variant/20" data-alt="A professional and clean studio headshot of a young adult male student with a friendly expression. He is wearing a minimalist navy blue sweater against a soft, neutral-colored background. The lighting is diffused and professional, creating a sophisticated academic profile aesthetic consistent with high-end editorial university branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8SuuYeYuD1bCItdqh3Ljc4LSckuxso14DulTz4R6X637QZkDiRdlqg0nO0WZMjLjPBs0rxxGtBXCIPv6VMpw_BLiXWtRJnthjhfPUtb8SJuqOyQftu76QQhyE7KVFnw2BqNR953KVdoygumHFdavVeyWS_epSJus6MhSULLVToqj8wtsbvkeSlJklgTecyrQMi69Xh0og2XiLQalfG55z26dvdPxcc1Lsr6UgzPfOFflKO87H9tYLYwAdnKMBO_ZIQRbiklOAPO05"/>
+<div>
+<p class="text-sm font-bold text-on-surface">J. Arrivillaga</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Estudiante</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-72 min-h-screen flex flex-col overflow-y-auto no-scrollbar">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl flex justify-between items-center w-full pl-12 pr-12 py-6">
+<div class="flex flex-col">
+<span class="font-headline font-bold text-on-surface dark:text-inverse-on-surface text-2xl tracking-tight">Mis Calificaciones</span>
+<span class="font-body text-xs text-on-surface-variant">Ciclo Académico Actual</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant/15 rounded-full text-sm w-64 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary-container/30 transition-all placeholder:text-outline/50" placeholder="Buscar curso o código..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant/20 mx-1"></div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<section class="p-12 space-y-12">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline text-display-md text-4xl font-extrabold text-on-surface tracking-tighter">Resumen Académico</h2>
+<p class="font-body text-body-md text-on-surface-variant mt-2 max-w-lg">Consulta tu rendimiento por curso y ciclo. Toda tu trayectoria en un solo entorno de alta legibilidad.</p>
+</div>
+<div class="flex items-center gap-4">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">Selector de Ciclo:</label>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-6 py-2.5 pr-12 text-sm font-bold text-primary focus:ring-4 focus:ring-primary-container/30 focus:border-primary transition-all cursor-pointer">
+<option>Ciclo 2024-II</option>
+<option>Ciclo 2024-I</option>
+<option>Ciclo 2023-II</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-primary">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Performance Grid (Tonal Lift) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="tonal-lift bg-surface-container-lowest p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary-container/30 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="insights">insights</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Promedio del Ciclo</p>
+<h3 class="text-4xl font-headline font-extrabold text-primary mt-1">88.5<span class="text-lg opacity-40 ml-1">/100</span></h3>
+</div>
+<div class="mt-2 h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88.5%] rounded-full"></div>
+</div>
+</div>
+<div class="tonal-lift bg-surface-container-lowest p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-tertiary-container/30 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified">verified</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Cursos Aprobados</p>
+<h3 class="text-4xl font-headline font-extrabold text-on-surface mt-1">5<span class="text-lg opacity-40 font-normal ml-1">asignaturas</span></h3>
+</div>
+<p class="text-xs text-on-surface-variant">Progreso de semestre: 83% completado</p>
+</div>
+<div class="tonal-lift bg-surface-container-lowest p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-error-container/20 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Cursos Reprobados</p>
+<h3 class="text-4xl font-headline font-extrabold text-error mt-1">1<span class="text-lg opacity-40 font-normal ml-1">incidencia</span></h3>
+</div>
+<div class="p-2 bg-error-container/10 border-l-4 border-error/30 rounded-r-lg">
+<p class="text-[10px] text-on-error-container font-medium">Requiere atención en: Cálculo Vectorial</p>
+</div>
+</div>
+</div>
+<!-- Editorial Grade Table -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-xl font-bold text-on-surface">Detalle de Calificaciones</h3>
+<button class="text-sm font-bold text-primary hover:underline underline-offset-4 flex items-center gap-2">
+                        Descargar Reporte PDF
+                        <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-6 text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant">Curso</th>
+<th class="px-6 py-6 text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant">Zona 1 (20)</th>
+<th class="px-6 py-6 text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant">Zona 2 (20)</th>
+<th class="px-6 py-6 text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant">Final (60)</th>
+<th class="px-6 py-6 text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant">Total</th>
+<th class="px-8 py-6 text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant text-right">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container/30">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Arquitectura de Software</span>
+<span class="text-xs text-on-surface-variant/70 font-mono">CS-402</span>
+</div>
+</td>
+<td class="px-6 py-6 font-medium">18</td>
+<td class="px-6 py-6 font-medium">17</td>
+<td class="px-6 py-6 font-medium">52</td>
+<td class="px-6 py-6"><span class="text-lg font-extrabold text-primary">87</span></td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 rounded-full bg-primary-container/20 text-on-primary-container text-[11px] font-bold uppercase tracking-wider">Aprobado</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Cálculo Vectorial</span>
+<span class="text-xs text-on-surface-variant/70 font-mono">MA-205</span>
+</div>
+</td>
+<td class="px-6 py-6 font-medium">15</td>
+<td class="px-6 py-6 font-medium">14</td>
+<td class="px-6 py-6 font-medium">32</td>
+<td class="px-6 py-6"><span class="text-lg font-extrabold text-primary">61</span></td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 rounded-full bg-primary-container/20 text-on-primary-container text-[11px] font-bold uppercase tracking-wider">Aprobado</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Sistemas Operativos II</span>
+<span class="text-xs text-on-surface-variant/70 font-mono">CS-308</span>
+</div>
+</td>
+<td class="px-6 py-6 font-medium">19</td>
+<td class="px-6 py-6 font-medium">18</td>
+<td class="px-6 py-6 font-medium">58</td>
+<td class="px-6 py-6"><span class="text-lg font-extrabold text-primary">95</span></td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 rounded-full bg-primary-container/20 text-on-primary-container text-[11px] font-bold uppercase tracking-wider">Aprobado</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Redes de Computadoras I</span>
+<span class="text-xs text-on-surface-variant/70 font-mono">CS-310</span>
+</div>
+</td>
+<td class="px-6 py-6 font-medium">12</td>
+<td class="px-6 py-6 font-medium">10</td>
+<td class="px-6 py-6 font-medium">25</td>
+<td class="px-6 py-6"><span class="text-lg font-extrabold text-error">47</span></td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 rounded-full bg-error-container/20 text-on-error-container text-[11px] font-bold uppercase tracking-wider">Reprobado</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Ética Profesional</span>
+<span class="text-xs text-on-surface-variant/70 font-mono">HUM-201</span>
+</div>
+</td>
+<td class="px-6 py-6 font-medium">20</td>
+<td class="px-6 py-6 font-medium">19</td>
+<td class="px-6 py-6 font-medium">55</td>
+<td class="px-6 py-6"><span class="text-lg font-extrabold text-primary">94</span></td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 rounded-full bg-primary-container/20 text-on-primary-container text-[11px] font-bold uppercase tracking-wider">Aprobado</span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Base de Datos II</span>
+<span class="text-xs text-on-surface-variant/70 font-mono">CS-312</span>
+</div>
+</td>
+<td class="px-6 py-6 font-medium">17</td>
+<td class="px-6 py-6 font-medium">16</td>
+<td class="px-6 py-6 font-medium">48</td>
+<td class="px-6 py-6"><span class="text-lg font-extrabold text-primary">81</span></td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 rounded-full bg-primary-container/20 text-on-primary-container text-[11px] font-bold uppercase tracking-wider">Aprobado</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Contextual Note (Soft UI) -->
+<div class="p-8 bg-tertiary-container/10 border-l-[6px] border-tertiary/40 rounded-2xl flex items-start gap-6">
+<span class="material-symbols-outlined text-tertiary text-4xl">info</span>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-on-tertiary-container">Nota Administrativa</h4>
+<p class="text-sm text-on-tertiary-container/80 leading-relaxed max-w-2xl">
+                        Las notas finales se publican oficialmente 48 horas después del examen final. Si encuentras alguna discrepancia, por favor contacta al catedrático del curso antes de la fecha de cierre de actas (15 de Noviembre).
+                    </p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto px-12 py-8 flex justify-between items-center text-[10px] text-on-surface-variant/40 font-medium uppercase tracking-[0.3em]">
+<span>The Academic Atelier — © 2024</span>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Reglamento Académico</a>
+<a class="hover:text-primary transition-colors" href="#">Soporte Técnico</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple Interaction logic
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('click', () => {
+                // Future expansion: open detailed grade modal
+                console.log('Row clicked');
+            });
+        });
+
+        // Atmospheric parallax effect for background
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
+            // Apply slight subtle movement to subtle decorative elements if they existed
+        });
+    </script>
+</body></html>

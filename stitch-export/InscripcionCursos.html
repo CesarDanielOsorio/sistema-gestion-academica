@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inscripción de Cursos - The Academic Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#d7e2ff",
+                    "on-surface": "#2b3437",
+                    "secondary-fixed-dim": "#d4d4db",
+                    "secondary-dim": "#515359",
+                    "surface-dim": "#d1dce0",
+                    "outline-variant": "#abb3b7",
+                    "outline": "#737c7f",
+                    "tertiary-fixed-dim": "#c7c3e3",
+                    "surface": "#f8f9fa",
+                    "inverse-primary": "#73a3f8",
+                    "on-tertiary-fixed": "#35334d",
+                    "on-primary": "#f7f7ff",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-container": "#e2e2e9",
+                    "primary-fixed": "#d7e2ff",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-secondary-fixed-variant": "#5a5b61",
+                    "on-secondary-fixed": "#3d3f45",
+                    "surface-container": "#eaeff1",
+                    "on-primary-fixed-variant": "#215aaa",
+                    "on-tertiary-fixed-variant": "#52506b",
+                    "surface-variant": "#dbe4e7",
+                    "tertiary-container": "#d5d1f2",
+                    "surface-container-low": "#f1f4f6",
+                    "surface-tint": "#255dad",
+                    "surface-container-high": "#e3e9ec",
+                    "on-background": "#2b3437",
+                    "tertiary-fixed": "#d5d1f2",
+                    "error": "#9f403d",
+                    "on-secondary-container": "#505157",
+                    "tertiary-dim": "#52506b",
+                    "error-container": "#fe8983",
+                    "background": "#f8f9fa",
+                    "surface-container-highest": "#dbe4e7",
+                    "error-dim": "#4e0309",
+                    "on-error-container": "#752121",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#fff7f6",
+                    "on-tertiary-container": "#484661",
+                    "on-primary-fixed": "#003e81",
+                    "inverse-on-surface": "#9b9d9e",
+                    "secondary": "#5d5f65",
+                    "on-secondary": "#f9f8ff",
+                    "inverse-surface": "#0c0f10",
+                    "primary-dim": "#1151a0",
+                    "on-tertiary": "#fcf7ff",
+                    "on-primary-container": "#0f509f",
+                    "primary-fixed-dim": "#c1d5ff",
+                    "tertiary": "#5e5c78",
+                    "primary": "#255dad",
+                    "on-surface-variant": "#586064"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-extrabold tracking-tight text-blue-700 dark:text-blue-400">The Academic Atelier</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full transition-colors" data-icon="settings">settings</button>
+</div>
+<button class="px-4 py-1.5 rounded-xl font-headline font-bold text-sm bg-primary text-on-primary hover:opacity-80 transition-opacity">Logout</button>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-16 bg-slate-50 dark:bg-slate-950 border-r border-slate-200/15 dark:border-slate-800/15 flex flex-col py-6 px-4 z-40">
+<div class="mb-8 px-2">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+</div>
+<div>
+<p class="font-manrope font-black text-blue-800 dark:text-blue-200 leading-tight">Academic Registry</p>
+<p class="text-[10px] uppercase tracking-widest text-slate-500">Student Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-100/50 transition-all font-public-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Active Item: Enrolment (Inscripciones) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-400 font-bold shadow-sm font-public-sans text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+<span>Enrolment</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-100/50 transition-all font-public-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span>Grades</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-100/50 transition-all font-public-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-100/50 transition-all font-public-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Transcripts</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full py-3 bg-primary-container text-on-primary-container rounded-xl font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+                    Get Support
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 bg-background p-8">
+<div class="max-w-6xl mx-auto">
+<!-- Page Header -->
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Inscripción de Cursos</h1>
+<p class="text-on-surface-variant max-w-2xl">Gestiona tu carga académica para el próximo periodo. Selecciona tu carrera y el ciclo correspondiente para visualizar la oferta disponible.</p>
+</header>
+<!-- Filters Section (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<div class="md:col-span-2 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/15 flex flex-col md:flex-row items-end gap-6">
+<div class="flex-1 w-full">
+<label class="block text-xs font-bold uppercase tracking-wider text-outline mb-2 ml-1">Carrera</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none font-medium">
+<option>Ingeniería de Software</option>
+<option>Administración de Empresas</option>
+<option>Arquitectura y Urbanismo</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex-1 w-full">
+<label class="block text-xs font-bold uppercase tracking-wider text-outline mb-2 ml-1">Ciclo Académico</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none font-medium">
+<option>2024-II (Actual)</option>
+<option>2025-I (Próximo)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-headline font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+                            Filtrar
+                        </button>
+</div>
+<div class="bg-primary-container p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="info">info</span>
+<span class="bg-white/40 px-2 py-1 rounded text-[10px] font-bold text-on-primary-container uppercase">Estado</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-primary-container text-lg">Periodo de Inscripción Abierto</h3>
+<p class="text-on-primary-container/80 text-sm">Cierra en 12 días, 4 horas.</p>
+</div>
+</div>
+</section>
+<!-- Course Table (Clean & Tonal) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/15 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-outline">Código</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-outline">Nombre del Curso</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-outline text-center">Créditos</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-outline">Estado Prerrequisitos</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-outline">Cupos Disponibles</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-outline text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-5 font-mono text-sm text-primary font-bold tracking-tight">SOFT-401</td>
+<td class="px-6 py-5">
+<p class="font-headline font-bold text-on-surface">Arquitectura de Microservicios</p>
+<p class="text-xs text-on-surface-variant">Prof. Julian Alarcón</p>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-bold">4.0</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                                            Completado
+                                        </div>
+</td>
+<td class="px-6 py-5">
+<div class="w-full max-w-[100px]">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>12 / 25</span>
+<span>48%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 48%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-primary hover:bg-primary-dim text-on-primary px-4 py-2 rounded-lg text-xs font-bold shadow-sm transition-all">Inscribir</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-5 font-mono text-sm text-primary font-bold tracking-tight">DB-302</td>
+<td class="px-6 py-5">
+<p class="font-headline font-bold text-on-surface">Bases de Datos NoSQL</p>
+<p class="text-xs text-on-surface-variant">Dra. Marta Rodríguez</p>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-bold">3.0</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                                            Completado
+                                        </div>
+</td>
+<td class="px-6 py-5">
+<div class="w-full max-w-[100px]">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>5 / 20</span>
+<span>25%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 25%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-primary hover:bg-primary-dim text-on-primary px-4 py-2 rounded-lg text-xs font-bold shadow-sm transition-all">Inscribir</button>
+</td>
+</tr>
+<!-- Row 3 (Blocked) -->
+<tr class="bg-surface-container-low/30 grayscale-[0.5]">
+<td class="px-6 py-5 font-mono text-sm text-outline font-bold tracking-tight">AI-500</td>
+<td class="px-6 py-5 opacity-60">
+<p class="font-headline font-bold text-on-surface">Ética en Inteligencia Artificial</p>
+<p class="text-xs text-on-surface-variant">Por Asignar</p>
+</td>
+<td class="px-6 py-5 text-center opacity-60">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-bold">2.0</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-xs font-semibold text-error bg-error-container/20 px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+                                            Pendiente: DB-302
+                                        </div>
+</td>
+<td class="px-6 py-5 opacity-60">
+<div class="w-full max-w-[100px]">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>0 / 15</span>
+<span>0%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 0%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-outline-variant text-on-surface/40 px-4 py-2 rounded-lg text-xs font-bold cursor-not-allowed" disabled="">Bloqueado</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-5 font-mono text-sm text-primary font-bold tracking-tight">UX-204</td>
+<td class="px-6 py-5">
+<p class="font-headline font-bold text-on-surface">Diseño de Interfaces Avanzado</p>
+<p class="text-xs text-on-surface-variant">Prof. Elena Santorum</p>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-bold">4.0</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                                            Completado
+                                        </div>
+</td>
+<td class="px-6 py-5">
+<div class="w-full max-w-[100px]">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>28 / 30</span>
+<span class="text-error">93%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 93%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-primary hover:bg-primary-dim text-on-primary px-4 py-2 rounded-lg text-xs font-bold shadow-sm transition-all">Inscribir</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer -->
+<footer class="bg-surface-container-low px-6 py-4 border-t border-outline-variant/10 flex justify-between items-center">
+<p class="text-xs text-on-surface-variant font-medium">Mostrando 4 de 12 cursos disponibles para tu perfil.</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg hover:bg-white transition-colors text-outline">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-white transition-colors text-outline">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+<!-- Footer Action -->
+<div class="mt-8 p-6 bg-surface-container-high rounded-xl flex items-center justify-between border-l-4 border-primary">
+<div>
+<h4 class="font-headline font-bold text-on-surface">Resumen de Pre-Inscripción</h4>
+<p class="text-sm text-on-surface-variant">Selecciona los cursos arriba para calcular tus créditos totales.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<p class="text-xs uppercase tracking-widest text-outline font-bold">Créditos Seleccionados</p>
+<p class="text-2xl font-black text-primary">0 / 22</p>
+</div>
+<button class="bg-white border-2 border-primary text-primary px-6 py-3 rounded-xl font-headline font-bold hover:bg-primary hover:text-on-primary transition-all">
+                            Ver Horario Tentativo
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Floating Decoration / Asset -->
+<div class="fixed bottom-8 right-8 pointer-events-none opacity-10">
+<div class="w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+</div>
+</body></html>

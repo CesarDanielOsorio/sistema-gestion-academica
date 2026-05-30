@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   The Academic Atelier — estilos globales
+   (ver stitch-export/EspecificacionesDiseño.md)
+   =========================================================================== */
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body;
+    font-family: 'Public Sans', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+    user-select: none;
+  }
+}
+
+@layer components {
+  /* Elevación por "lift" tonal en vez de sombras pesadas */
+  .tonal-lift {
+    box-shadow: 0 20px 40px rgba(43, 52, 55, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Borde "fantasma": outline-variant al 15% de opacidad */
+  .ghost-border {
+    border: 1px solid rgba(171, 179, 183, 0.15);
+  }
+
+  /* Degradado 45° del color primario para CTAs */
+  .primary-gradient {
+    background: linear-gradient(45deg, #255dad, #1151a0);
+  }
+
+  /* Cabecera/nav flotante tipo "frosted glass" */
+  .glass-header {
+    background: rgba(248, 249, 250, 0.8);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Scrollbar discreta acorde al sistema de diseño */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #dbe4e7;
+  border-radius: 10px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

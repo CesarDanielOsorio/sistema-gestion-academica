@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistema de Gestión Académica - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c7c3e3",
+                    "on-surface-variant": "#586064",
+                    "outline": "#737c7f",
+                    "on-error": "#fff7f6",
+                    "secondary-fixed-dim": "#d4d4db",
+                    "background": "#f8f9fa",
+                    "error-dim": "#4e0309",
+                    "on-tertiary-container": "#484661",
+                    "secondary-container": "#e2e2e9",
+                    "primary-fixed-dim": "#c1d5ff",
+                    "surface-container": "#eaeff1",
+                    "tertiary-container": "#d5d1f2",
+                    "secondary": "#5d5f65",
+                    "on-secondary-fixed": "#3d3f45",
+                    "surface-container-high": "#e3e9ec",
+                    "secondary-fixed": "#e2e2e9",
+                    "tertiary-dim": "#52506b",
+                    "on-secondary-fixed-variant": "#5a5b61",
+                    "primary-fixed": "#d7e2ff",
+                    "on-primary-fixed-variant": "#215aaa",
+                    "on-primary": "#f7f7ff",
+                    "on-error-container": "#752121",
+                    "surface-bright": "#f8f9fa",
+                    "inverse-primary": "#73a3f8",
+                    "surface-tint": "#255dad",
+                    "on-secondary": "#f9f8ff",
+                    "inverse-on-surface": "#9b9d9e",
+                    "error-container": "#fe8983",
+                    "tertiary-fixed": "#d5d1f2",
+                    "outline-variant": "#abb3b7",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#d7e2ff",
+                    "on-background": "#2b3437",
+                    "on-tertiary-fixed": "#35334d",
+                    "surface": "#f8f9fa",
+                    "secondary-dim": "#515359",
+                    "surface-variant": "#dbe4e7",
+                    "on-primary-container": "#0f509f",
+                    "surface-dim": "#d1dce0",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-primary-fixed": "#003e81",
+                    "surface-container-low": "#f1f4f6",
+                    "on-surface": "#2b3437",
+                    "tertiary": "#5e5c78",
+                    "on-tertiary": "#fcf7ff",
+                    "on-secondary-container": "#505157",
+                    "inverse-surface": "#0c0f10",
+                    "on-tertiary-fixed-variant": "#52506b",
+                    "primary-dim": "#1151a0",
+                    "error": "#9f403d",
+                    "primary": "#255dad"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+        .tonal-lift {
+            box-shadow: 0 20px 40px rgba(43, 52, 55, 0.04);
+        }
+        .ghost-border {
+            border: 1px solid rgba(171, 179, 183, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center justify-center p-6">
+<div class="w-full max-w-md flex flex-col items-center">
+<div class="mb-12 flex flex-col items-center">
+<div class="w-20 h-20 bg-primary-container rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="account_balance">account_balance</span>
+</div>
+<h1 class="text-on-background text-2xl font-extrabold tracking-tight text-center">
+                Sistema de Gestión Académica
+            </h1>
+<p class="text-on-surface-variant font-body text-sm mt-2">The Academic Atelier</p>
+</div>
+<main class="w-full bg-surface-container-lowest rounded-xl p-8 tonal-lift ghost-border">
+<div class="mb-8">
+<h2 class="text-xl font-bold text-on-surface mb-2">Bienvenido</h2>
+<p class="text-on-surface-variant text-sm">Ingrese sus credenciales para acceder al portal.</p>
+</div>
+<form class="space-y-6" onsubmit="return false;">
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant" for="username">
+                        Nombre de Usuario
+                    </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline-variant">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-3 bg-surface-container-low ghost-border rounded-lg text-on-surface text-sm focus:ring-4 focus:ring-primary-container/30 focus:border-primary transition-all outline-none" id="username" name="username" placeholder="ej. jsmith123" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant" for="password">
+                        Contraseña
+                    </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline-variant">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-3 bg-surface-container-low ghost-border rounded-lg text-on-surface text-sm focus:ring-4 focus:ring-primary-container/30 focus:border-primary transition-all outline-none" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="hidden" id="error-message">
+<div class="flex items-center gap-3 p-4 rounded-lg bg-error-container/20 border border-error/10">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<p class="text-on-error-container text-xs font-medium">Credenciales incorrectas. Por favor, intente de nuevo.</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox"/>
+<span class="text-xs text-on-surface-variant group-hover:text-on-surface transition-colors">Recordarme</span>
+</label>
+<a class="text-xs font-semibold text-primary hover:text-primary-dim transition-colors" href="#">
+                        ¿Olvidó su contraseña?
+                    </a>
+</div>
+<button class="w-full py-3.5 px-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-lg shadow-lg shadow-primary/10 hover:shadow-primary/20 hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group" type="submit">
+<span>Iniciar Sesión</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+</main>
+<footer class="mt-12 text-center space-y-4">
+<div class="flex items-center justify-center gap-6">
+<a class="text-xs text-slate-500 hover:text-blue-700 transition-colors" href="#">Portal</a>
+<a class="text-xs text-slate-500 hover:text-blue-700 transition-colors" href="#">Admissions</a>
+<a class="text-xs text-slate-500 hover:text-blue-700 transition-colors" href="#">Library</a>
+<a class="text-xs text-slate-500 hover:text-blue-700 transition-colors" href="#">Support</a>
+</div>
+<p class="text-xs text-slate-400 font-body">
+                © 2024 The Academic Atelier. All rights reserved.
+            </p>
+</footer>
+</div>
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -right-[5%] w-[40vw] h-[40vw] bg-primary-container/20 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -left-[5%] w-[40vw] h-[40vw] bg-tertiary-container/20 rounded-full blur-[120px]"></div>
+</div>
+</body></html>

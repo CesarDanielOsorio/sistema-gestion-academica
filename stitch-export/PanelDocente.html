@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Academic Atelier - Panel del Docente</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d7e2ff",
+                        "error-dim": "#4e0309",
+                        "primary": "#255dad",
+                        "on-secondary-fixed-variant": "#5a5b61",
+                        "on-error-container": "#752121",
+                        "on-tertiary": "#fcf7ff",
+                        "primary-fixed-dim": "#c1d5ff",
+                        "on-primary-fixed": "#003e81",
+                        "on-secondary": "#f9f8ff",
+                        "tertiary": "#5e5c78",
+                        "on-background": "#2b3437",
+                        "secondary-container": "#e2e2e9",
+                        "tertiary-fixed-dim": "#c7c3e3",
+                        "inverse-primary": "#73a3f8",
+                        "surface-container-low": "#f1f4f6",
+                        "on-surface-variant": "#586064",
+                        "on-primary-container": "#0f509f",
+                        "on-primary": "#f7f7ff",
+                        "error": "#9f403d",
+                        "surface-bright": "#f8f9fa",
+                        "outline": "#737c7f",
+                        "on-tertiary-fixed-variant": "#52506b",
+                        "surface-variant": "#dbe4e7",
+                        "on-tertiary-container": "#484661",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5d5f65",
+                        "outline-variant": "#abb3b7",
+                        "secondary-fixed": "#e2e2e9",
+                        "inverse-surface": "#0c0f10",
+                        "primary-dim": "#1151a0",
+                        "on-tertiary-fixed": "#35334d",
+                        "surface-container-high": "#e3e9ec",
+                        "on-error": "#fff7f6",
+                        "surface-tint": "#255dad",
+                        "surface-dim": "#d1dce0",
+                        "on-surface": "#2b3437",
+                        "on-secondary-fixed": "#3d3f45",
+                        "surface-container-highest": "#dbe4e7",
+                        "secondary-dim": "#515359",
+                        "inverse-on-surface": "#9b9d9e",
+                        "tertiary-fixed": "#d5d1f2",
+                        "secondary-fixed-dim": "#d4d4db",
+                        "on-primary-fixed-variant": "#215aaa",
+                        "primary-container": "#d7e2ff",
+                        "error-container": "#fe8983",
+                        "tertiary-dim": "#52506b",
+                        "tertiary-container": "#d5d1f2",
+                        "surface": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-secondary-container": "#505157",
+                        "surface-container": "#eaeff1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-lift {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .tonal-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .btn-gradient {
+            background: linear-gradient(45deg, #255dad, #1151a0);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- SideNavBar Integration -->
+<aside class="h-screen w-72 flex flex-col fixed left-0 top-0 bg-surface-container-low dark:bg-surface-dim z-50">
+<div class="flex flex-col h-full py-8 px-6">
+<!-- Brand Header -->
+<div class="flex items-center gap-4 mb-12">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center overflow-hidden">
+<img alt="Logotipo de The Academic Atelier" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArH79hQJh-jMWYEhsuuytRAzkLm1HD2sURJWXg49XcF5znvG4c2Zz_0yH3zW-LuiSytjlWhL9Nrs9G6Z0Mde45ZiHf-NzrbrKJRa0ovDCWiN9_fkWBgWO0IFrPULtfxz5eUqTYoyqId4x_nvTykTxPvY7g9PogEtEYmpuD33NefoeZEPW28rDjQwdEUP_jOlun4UlDpvYQNj_OkC5kbdBVpy_EK-E7GTWSYudQjYlcdm9gnOEjgsSXo3HGXZIYuo9TceNJJOEQXUCM"/>
+</div>
+<div>
+<h1 class="font-display text-xl font-bold tracking-tight text-primary dark:text-primary-fixed">The Academic Atelier</h1>
+<p class="text-xs font-semibold text-on-surface-variant/70 uppercase tracking-widest">Portal Docente</p>
+</div>
+</div>
+<!-- Main Navigation -->
+<nav class="flex-grow space-y-2">
+<!-- Panel (Active) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-primary dark:text-primary-fixed-dim font-bold border-r-4 border-primary dark:border-primary-fixed-dim bg-surface-container-highest/30 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Panel</span>
+</a>
+<!-- Mis Cursos -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Mis Cursos</span>
+</a>
+<!-- Ingreso de Notas -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Ingreso de Notas</span>
+</a>
+<!-- Horario -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Horario</span>
+</a>
+<!-- Recursos -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Recursos</span>
+</a>
+</nav>
+<!-- Footer Navigation -->
+<div class="mt-auto space-y-2 pt-8 border-t border-outline-variant/10">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Perfil</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-error hover:bg-error-container/10 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-headline font-semibold text-body-md tracking-tight">Cerrar Sesión</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-18rem)] z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-10 py-4 h-20">
+<!-- Search Bar -->
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-xl">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full py-2.5 pl-11 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-outline-variant" placeholder="Buscar alumnos, notas, cursos..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-container-highest/50 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full ring-2 ring-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest/50 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="flex items-center gap-3 pl-4 ml-4 border-l border-outline-variant/20">
+<div class="text-right">
+<p class="text-sm font-bold leading-tight">Dr. Julián Arrivillaga</p>
+<p class="text-xs text-on-surface-variant">Docente Titular</p>
+</div>
+<img alt="Avatar del Docente" class="w-10 h-10 rounded-full bg-primary-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7UpF_nEDrklG4PtghnF_2ZOmhgh_-7WDS2v1PZINTsxWxkmuj1Nn3V9JTvOmSLPWJwCYwPhXC90vGnRJ3Pkv8YnqNVQAmQQ8tQpBPmcTwy2Iu0QjOqC5ond6CWGwLYYI3h7aTNLaitLDUwecdXWmw65FA7F145XNv_ByY3pore7wkAn1jszjQELPQLucbJihcvDaiKeGMY7V15zeiuqqJECcnyeX-2kuu5Ghftn0Soa2CZbRV0NXCUVbEDiz2ESd17vWE3gUn_ilC"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="pt-28 pb-12 px-10 max-w-7xl mx-auto space-y-12">
+<!-- Page Title Section -->
+<section class="space-y-1">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface">Panel del Docente</h2>
+<p class="font-body text-lg text-on-surface-variant/80">Bienvenido, <span class="font-semibold text-primary">Dr. Julián Arrivillaga</span> — Facultad de Artes y Ciencias</p>
+</section>
+<!-- KPI Row (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl tonal-lift flex flex-col justify-between h-48 group">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_stories">auto_stories</span>
+</div>
+<span class="text-xs font-bold text-primary/60 bg-primary/5 px-3 py-1 rounded-full uppercase tracking-tighter">Activo</span>
+</div>
+<div>
+<p class="text-4xl font-extrabold font-headline mb-1">4</p>
+<p class="text-sm font-semibold text-on-surface-variant">Cursos asignados</p>
+<p class="text-xs text-outline-variant mt-1">Ciclo 2024-II</p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl tonal-lift flex flex-col justify-between h-48 group">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-xl bg-tertiary/5 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+</div>
+</div>
+<div>
+<p class="text-4xl font-extrabold font-headline mb-1">156</p>
+<p class="text-sm font-semibold text-on-surface-variant">Total de estudiantes</p>
+<p class="text-xs text-outline-variant mt-1">Inscritos activamente</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl tonal-lift flex flex-col justify-between h-48 group border-l-4 border-error/20">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-xl bg-error/5 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl" data-icon="assignment_late">assignment_late</span>
+</div>
+<span class="text-xs font-bold text-error bg-error/10 px-3 py-1 rounded-full uppercase tracking-tighter">Prioridad</span>
+</div>
+<div>
+<p class="text-4xl font-extrabold font-headline mb-1 text-error">2</p>
+<p class="text-sm font-semibold text-on-surface-variant">Notas pendientes</p>
+<p class="text-xs text-outline-variant mt-1">Secciones por calificar</p>
+</div>
+</div>
+</section>
+<!-- Mis Cursos Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-2xl font-bold text-on-surface">Mis Cursos Actuales</h3>
+<button class="text-primary font-semibold flex items-center gap-2 hover:underline transition-all">
+                        Ver todos <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 tonal-lift flex gap-6 items-center">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro photograph showing vibrant paint swirls of primary and secondary colors mixing together. The lighting is bright and crisp, highlighting the textures of the oil paint. The aesthetic is clean, artistic, and modern, reflecting a high-end academic art department's focus on color theory and composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF9GJDiQ5qO9BxIO7JArMwj0pdCFM6LEqTQI9g0tgMr_p1CX2ytdbjRhKo7cPL1j7AvLXWEJEnXsrjn1_gbiJLANrFt2iQTY08gyxw4L5VufbD24_XZ0vZLS0lJeHMj09c0L01Gwin_vVApmB9Bb0zTtZsHZeUpIczwRqZcqGCG01Fqw9CRt5WthQhD_L5egaEQuZOtmwOOKpCDc7jEg7lOHE1nfJwnEQ5mRTFDxPrn_ZVPJwWYd72u5BBI91_jhZPpN6g4F15HmvW"/>
+</div>
+<div class="flex-grow space-y-3">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Teoría del Color</h4>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Sección A</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">group</span> 42 estudiantes
+                                </p>
+</div>
+<button class="w-full btn-gradient py-2.5 px-4 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform duration-150">
+                                Ingresar notas
+                            </button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 tonal-lift flex gap-6 items-center">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean, gallery-style photograph of a minimalist modern sculpture against a neutral white background. The lighting is architectural and soft, creating subtle tonal shadows. The mood is sophisticated and intellectual, representing a professional study of modern art history in an academic sanctuary environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjF6fHv6HM3PFawLfNm1AjvQFWWs3vmg3fw1oClpoFqENB1d9nzjgwH11i6Gy4SpyfSK16fuXjDTISJ0Uwn7OOXdUpzd8FqGtAa5Er3VLnBdDvlcm55ypyZycyNmOe0zcttWhu273MltMOJSkIu27gTNvDEtkO7oz9RxXXzyKFdGgyWy8GUsZS_kmuNHWSSYpWU2a6IEsrsFrsrz1vZ8eCd0QwVccWpBxnGf6-eXi1gYqouHM1ngYDODGH5-YEj4A-NGsAL9CADD1C"/>
+</div>
+<div class="flex-grow space-y-3">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Historia del Arte Moderno</h4>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Sección B</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">group</span> 38 estudiantes
+                                </p>
+</div>
+<button class="w-full btn-gradient py-2.5 px-4 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform duration-150">
+                                Ingresar notas
+                            </button>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 tonal-lift flex gap-6 items-center">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A top-down view of a designer's desk showing a clean composition of sketchbooks, architectural rulers, and minimalist pens. The lighting is natural and morning-bright, emphasizing a structured and focused atmosphere. The palette is dominated by whites and soft grays with subtle wood accents, echoing an intellectual sanctuary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2CudGvDDo1eELJevP_OC9WUGYzlkkkPm4TeG5CGaxbbFg7UZmxPw0xz8GFU0iOCF2Q1CCbbHLfdSael2Z8XiDaGQh4hZ0ezRz964l8VYERoIL69AoXWp3JvWAraLBkOFrxWnVTI1CBHuzQM2K4KB2-fdXK9BXhqCd_tWtpVVFZ33tbyYxJdgkjRdBIewf21cyTJIwMSsmoUJth2D_J9CAbhiTkeN-5KngmxVbuIwGOcZHI0-a_BK2fNIem9xyn2Piyt18nlverF3K"/>
+</div>
+<div class="flex-grow space-y-3">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Taller de Composición I</h4>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Sección A</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">group</span> 36 estudiantes
+                                </p>
+</div>
+<button class="w-full btn-gradient py-2.5 px-4 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform duration-150">
+                                Ingresar notas
+                            </button>
+</div>
+</div>
+<!-- Course Card 4 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 tonal-lift flex gap-6 items-center">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A digital, abstract representation of visual semiotics featuring clean lines, golden ratio patterns, and geometric symbols overlaid on a soft blue background. The style is high-end editorial and intellectual, with professional studio lighting and a focus on clarity and deep structure. The mood is quiet and profoundly academic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClXsIASQUjx8whc5eTkKL8qhB-MwVLMwivjWHPxh68JhR408hTHJlF4oS7mpnAPKy7MgEUBsxwXT5EtttDPZ8A6_jH9KVutkqbLQ-yp84lmeCGyP2PqGnx_HFG-4J_6XRn0dAWrBdnY11wOVXBmJV7XvPb7HoSX1J-s3WY4PG1d5eKDRwBAyojncIp4ZzGywtJKHS3PIVWnf3mldbSap7MHQ2uwMHMryCfWI1g56Q6hRrN3I_7uyXLK2IaHnk17cDDIvS5zUBXf5V4"/>
+</div>
+<div class="flex-grow space-y-3">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Semiótica de la Imagen</h4>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Sección C</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">group</span> 40 estudiantes
+                                </p>
+</div>
+<button class="w-full btn-gradient py-2.5 px-4 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform duration-150">
+                                Ingresar notas
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Section: Calendar/Recent Activity (Implicitly added to show layout quality) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-10">
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-3xl tonal-lift">
+<h4 class="font-headline font-bold text-xl mb-6">Próximos Eventos</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low/50">
+<div class="w-12 h-12 rounded-xl bg-primary-container/30 flex flex-col items-center justify-center text-primary">
+<span class="text-xs font-bold uppercase">Oct</span>
+<span class="text-xl font-extrabold leading-none">24</span>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-sm">Cierre de Registro de Notas - Parcial 2</p>
+<p class="text-xs text-on-surface-variant">Sistema cerrará a las 23:59 hrs</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low/50">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/30 flex flex-col items-center justify-center text-tertiary">
+<span class="text-xs font-bold uppercase">Oct</span>
+<span class="text-xl font-extrabold leading-none">26</span>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-sm">Conferencia: Nuevas Tendencias en Composición</p>
+<p class="text-xs text-on-surface-variant">Auditorio Principal - 10:00 AM</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-3xl text-on-primary flex flex-col justify-between shadow-xl shadow-primary/30 relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">help</span>
+<h4 class="font-headline font-bold text-xl mb-2">¿Necesitas ayuda?</h4>
+<p class="text-on-primary/80 text-sm leading-relaxed">Consulta la guía rápida para el nuevo sistema de calificación o contacta a soporte técnico.</p>
+</div>
+<button class="relative z-10 mt-6 bg-white text-primary px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-on-primary transition-colors">
+                        Ir al Centro de Ayuda
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<script>
+        // Simple interactivity for demonstration
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-[0.98]'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-[0.98]'));
+        });
+    </script>
+</body></html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#e2e2e9",
+                    "surface-container-highest": "#dbe4e7",
+                    "surface-bright": "#f8f9fa",
+                    "on-primary-fixed": "#003e81",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#5d5f65",
+                    "on-error-container": "#752121",
+                    "error-dim": "#4e0309",
+                    "on-background": "#2b3437",
+                    "on-tertiary-container": "#484661",
+                    "surface-container-low": "#f1f4f6",
+                    "surface": "#f8f9fa",
+                    "primary": "#255dad",
+                    "on-secondary-container": "#505157",
+                    "inverse-surface": "#0c0f10",
+                    "surface-container-high": "#e3e9ec",
+                    "on-surface-variant": "#586064",
+                    "on-surface": "#2b3437",
+                    "on-secondary-fixed-variant": "#5a5b61",
+                    "surface-tint": "#255dad",
+                    "outline-variant": "#abb3b7",
+                    "tertiary-container": "#d5d1f2",
+                    "secondary-fixed-dim": "#d4d4db",
+                    "on-error": "#fff7f6",
+                    "inverse-primary": "#73a3f8",
+                    "surface-variant": "#dbe4e7",
+                    "on-secondary-fixed": "#3d3f45",
+                    "on-primary-container": "#0f509f",
+                    "inverse-on-surface": "#9b9d9e",
+                    "tertiary-fixed": "#d5d1f2",
+                    "tertiary-fixed-dim": "#c7c3e3",
+                    "error-container": "#fe8983",
+                    "on-secondary": "#f9f8ff",
+                    "error": "#9f403d",
+                    "on-primary-fixed-variant": "#215aaa",
+                    "tertiary": "#5e5c78",
+                    "on-primary": "#f7f7ff",
+                    "primary-container": "#d7e2ff",
+                    "secondary-dim": "#515359",
+                    "on-tertiary": "#fcf7ff",
+                    "primary-fixed-dim": "#c1d5ff",
+                    "surface-dim": "#d1dce0",
+                    "on-tertiary-fixed-variant": "#52506b",
+                    "on-tertiary-fixed": "#35334d",
+                    "primary-dim": "#1151a0",
+                    "primary-fixed": "#d7e2ff",
+                    "surface-container": "#eaeff1",
+                    "outline": "#737c7f",
+                    "tertiary-dim": "#52506b",
+                    "background": "#f8f9fa",
+                    "secondary-fixed": "#e2e2e9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 w-full border-b border-slate-200/10 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl font-manrope font-semibold tracking-tight">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-blue-800 dark:text-blue-200 tracking-tighter">The Academic Atelier</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 w-64" placeholder="Buscar expedientes..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl text-blue-700 dark:text-blue-400 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 pt-16 bg-slate-50 dark:bg-slate-900 border-r border-slate-200/50">
+<div class="flex flex-col gap-2 py-8 pr-0 h-full">
+<div class="px-8 mb-8">
+<div class="flex items-center gap-3">
+<img alt="Student avatar" class="w-10 h-10 rounded-full object-cover" data-alt="Close-up professional portrait of a young male student in a bright studio setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfd-pHDZIWNGFozr-e5bQyHDkBvvm0V5rMPKvieAmAJZx_mDk09yLbGwqzU0bohbT9zX9IiQXYPjlNf_OLdg8aDKJfavUHCX2ryIB6j3gOtlddPLun_SX6tv2ymZfSo7Af8nQ22Mmg-HM7YqTpnBm8RbSRpf9KLGQ-caQmcPLJJt8kCRpdpF5FVm3_0QkwNeyd_pAJLHwEqGVsJt185ec-94k_Kkw3-qVoe8DrcoDcayQknqBPaH1HQjE1wxyjuRd2A3gwitkobN44"/>
+<div>
+<p class="font-manrope text-sm font-bold text-on-surface">Julian Adler</p>
+<p class="text-xs text-slate-500">ID: 2024-0089</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 text-blue-700 dark:text-blue-300 font-bold bg-white dark:bg-slate-950 rounded-l-full ml-4 py-3 pl-6 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-public-sans text-sm">Home</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 py-3 pl-10 hover:text-blue-600 dark:hover:text-blue-300 transition-all font-public-sans text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="edit_calendar">edit_calendar</span>
+<span>Enrolment</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 py-3 pl-10 hover:text-blue-600 dark:hover:text-blue-300 transition-all font-public-sans text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+<span>Grades</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 py-3 pl-10 hover:text-blue-600 dark:hover:text-blue-300 transition-all font-public-sans text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Curriculum</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 py-3 pl-10 hover:text-blue-600 dark:hover:text-blue-300 transition-all font-public-sans text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span>Certificates</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12">
+<header class="mb-10 max-w-5xl">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Panel del Estudiante</h1>
+<p class="text-on-surface-variant max-w-2xl font-light">Bienvenido de nuevo, Julian. Aquí tienes un resumen de tu actividad académica para el periodo lectivo actual.</p>
+</header>
+<!-- Bento Grid Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<!-- Card: Cursos Inscritos -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="class">class</span>
+</div>
+<span class="text-xs font-semibold text-primary px-2 py-1 bg-primary/5 rounded-full">Actual</span>
+</div>
+<div>
+<p class="text-3xl font-bold text-on-surface">6</p>
+<p class="text-sm font-medium text-on-surface-variant">Cursos Inscritos</p>
+</div>
+</div>
+<!-- Card: Promedio General -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+</div>
+<div>
+<p class="text-3xl font-bold text-on-surface">8.5</p>
+<p class="text-sm font-medium text-on-surface-variant">Promedio General</p>
+</div>
+</div>
+<!-- Card: Avance Pensum -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="moving">moving</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<p class="text-3xl font-bold text-on-surface">65%</p>
+<p class="text-xs text-on-surface-variant">142/220 CR</p>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%;"></div>
+</div>
+<p class="text-sm font-medium text-on-surface-variant">Avance Pensum</p>
+</div>
+</div>
+<!-- Card: Constancias -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</div>
+</div>
+<div>
+<p class="text-3xl font-bold text-on-surface">3</p>
+<p class="text-sm font-medium text-on-surface-variant">Constancias Listas</p>
+</div>
+</div>
+</div>
+<!-- Recent Grades Section -->
+<section class="bg-surface-container-lowest rounded-2xl border border-outline-variant/15 overflow-hidden">
+<div class="p-8 flex justify-between items-center bg-white">
+<div>
+<h2 class="text-2xl font-bold text-on-surface">Calificaciones Recientes</h2>
+<p class="text-sm text-on-surface-variant">Últimas entradas registradas por tus facilitadores.</p>
+</div>
+<button class="text-primary text-sm font-semibold hover:underline flex items-center gap-1">
+                    Ver historial completo
+                    <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-xs uppercase tracking-wider">
+<th class="px-8 py-4 font-semibold">Curso / Materia</th>
+<th class="px-8 py-4 font-semibold">Fecha de Registro</th>
+<th class="px-8 py-4 font-semibold">Estado</th>
+<th class="px-8 py-4 font-semibold text-right">Calificación</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container/50">
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold">AL</div>
+<span class="font-medium text-on-surface">Álgebra Lineal Avanzada</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">12 Oct 2023</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full text-xs font-semibold">Finalizado</span>
+</td>
+<td class="px-8 py-5 text-right font-bold text-on-surface">9.2</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center text-xs font-bold">TH</div>
+<span class="font-medium text-on-surface">Teoría del Humanismo Digital</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">10 Oct 2023</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full text-xs font-semibold">Finalizado</span>
+</td>
+<td class="px-8 py-5 text-right font-bold text-on-surface">8.8</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xs font-bold">DS</div>
+<span class="font-medium text-on-surface">Diseño de Sistemas I</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">08 Oct 2023</td>
+<td class="px-8 py-5">
+<span class="bg-error-container/20 text-error px-3 py-1 rounded-full text-xs font-semibold">Revisión</span>
+</td>
+<td class="px-8 py-5 text-right font-bold text-on-surface">7.5</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-bold">EP</div>
+<span class="font-medium text-on-surface">Estadística Probabilística</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">05 Oct 2023</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full text-xs font-semibold">Finalizado</span>
+</td>
+<td class="px-8 py-5 text-right font-bold text-on-surface">10.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Academic Advisor Shortcut (Asymmetric element) -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-dim rounded-2xl p-8 text-on-primary flex items-center justify-between overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="text-xl font-bold mb-2">¿Necesitas orientación académica?</h3>
+<p class="text-primary-container/80 text-sm max-w-sm mb-6">Agenda una cita virtual con tu tutor asignado para revisar tu avance en el pensum y proyecciones de graduación.</p>
+<button class="bg-white text-primary px-6 py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition-all active:scale-95">Solicitar Asesoría</button>
+</div>
+<div class="absolute right-0 bottom-0 top-0 w-1/3 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[160px]" data-icon="school" style="font-variation-settings: 'wght' 200;">school</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-8 flex flex-col justify-center items-center text-center border border-outline-variant/10">
+<div class="w-16 h-16 rounded-full bg-white mb-4 shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="event_note">event_note</span>
+</div>
+<h3 class="font-bold text-on-surface mb-1">Próximas Fechas</h3>
+<p class="text-xs text-on-surface-variant mb-4">Inscripciones Ciclo B-2024</p>
+<div class="text-primary font-extrabold text-lg">Nov 15 - Nov 22</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) - Suppression Logic applied: Hidden on Dashboard if no direct primary action fits. 
+         But here 'Inscribirse' is a key action for the system if it were enrollment season. 
+         Following standard shell rules for the requested prompt. -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add" data-weight="fill">add</span>
+</button>
+</body></html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mi Pensum | The Academic Atelier</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#5d5f65",
+                    "on-background": "#2b3437",
+                    "on-tertiary-fixed-variant": "#52506b",
+                    "primary-fixed-dim": "#c1d5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#0c0f10",
+                    "secondary-dim": "#515359",
+                    "on-error": "#fff7f6",
+                    "on-primary": "#f7f7ff",
+                    "tertiary-container": "#d5d1f2",
+                    "secondary-container": "#e2e2e9",
+                    "error-dim": "#4e0309",
+                    "outline-variant": "#abb3b7",
+                    "on-secondary-container": "#505157",
+                    "outline": "#737c7f",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-tertiary": "#fcf7ff",
+                    "on-primary-container": "#0f509f",
+                    "on-error-container": "#752121",
+                    "primary-dim": "#1151a0",
+                    "secondary-fixed-dim": "#d4d4db",
+                    "on-tertiary-container": "#484661",
+                    "inverse-primary": "#73a3f8",
+                    "surface-container-low": "#f1f4f6",
+                    "on-primary-fixed": "#003e81",
+                    "surface-container-highest": "#dbe4e7",
+                    "surface": "#f8f9fa",
+                    "on-secondary": "#f9f8ff",
+                    "tertiary-fixed": "#d5d1f2",
+                    "tertiary-dim": "#52506b",
+                    "error-container": "#fe8983",
+                    "tertiary": "#5e5c78",
+                    "on-surface-variant": "#586064",
+                    "error": "#9f403d",
+                    "on-secondary-fixed": "#3d3f45",
+                    "tertiary-fixed-dim": "#c7c3e3",
+                    "primary": "#255dad",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#255dad",
+                    "primary-fixed": "#d7e2ff",
+                    "surface-variant": "#dbe4e7",
+                    "inverse-on-surface": "#9b9d9e",
+                    "on-surface": "#2b3437",
+                    "surface-container": "#eaeff1",
+                    "surface-dim": "#d1dce0",
+                    "surface-bright": "#f8f9fa",
+                    "on-secondary-fixed-variant": "#5a5b61",
+                    "on-primary-fixed-variant": "#215aaa",
+                    "primary-container": "#d7e2ff",
+                    "surface-container-high": "#e3e9ec",
+                    "on-tertiary-fixed": "#35334d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-slate-100 dark:bg-slate-950 flex flex-col p-4 space-y-2 font-public-sans text-sm tracking-wide z-40">
+<div class="mb-10 px-2 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div>
+<div class="font-manrope font-extrabold text-blue-800 dark:text-blue-300">Student Portal</div>
+<div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Undergraduate</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-4 py-3 bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-400 font-semibold rounded-lg shadow-sm transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                Curriculum
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="grade">grade</span>
+                Grades
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="calendar_today">calendar_today</span>
+                Schedule
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="local_library">local_library</span>
+                Library
+            </a>
+</nav>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help_outline">help_outline</span>
+                Support
+            </a>
+<a class="flex items-center px-4 py-3 text-error hover:bg-error-container/10 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-64 right-0 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md z-30 px-8 h-16 flex justify-between items-center no-border tonal-layering">
+<div class="flex items-center flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 text-sm font-public-sans focus:ring-2 focus:ring-primary/20" placeholder="Buscar cursos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center space-x-3">
+<div class="text-right hidden sm:block">
+<div class="text-sm font-semibold text-on-surface">Julián Restrepo</div>
+<div class="text-[10px] text-outline uppercase font-bold tracking-tight">Ing. de Sistemas</div>
+</div>
+<img alt="Student avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-high" data-alt="close-up portrait of a young male student with glasses in a modern library setting with soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPNockJV5P95b2maL7GtH8Ij_lM4D9obNfbHqLHJJ3B_eM7AO_CGK5KjCYsArJ6WrH5sNKiYIfcUQGqItILbpHf-v773Yh3ZF9Y4TRGReowN4AC4cuw0_ph-r43PacKoaEb0nndh5V72QfU1dW66NGf8EJcSOMWbqERB58BEahPCGHdqoi2dea15UXW9I5_GMjr0BTFM7ZdE_FxsGLrbd3b42ibtyHbHwaJWEAor78n-ZUw0PS0x1fVUqGMP16pZCPPyR8gVb7nxFh"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="pt-24 pb-16 px-12 max-w-7xl mx-auto">
+<!-- Hero Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="space-y-2">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface font-manrope">Mi Pensum</h1>
+<p class="text-on-surface-variant font-body max-w-md">Visualiza tu trayectoria académica y el progreso hacia tu meta profesional en Ingeniería de Sistemas.</p>
+</div>
+<!-- Progress Widget -->
+<div class="bg-surface-container-lowest p-6 rounded-xl w-full md:w-80 shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm font-bold text-primary tracking-wide">PROGRESO TOTAL</span>
+<span class="text-2xl font-black text-on-surface">65%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-primary-dim h-full w-[65%] rounded-full"></div>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-bold text-outline-variant uppercase">
+<span>128 Créditos</span>
+<span>196 Totales</span>
+</div>
+</div>
+</div>
+<!-- Dashboard Stats Tonal Layering -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center space-x-4">
+<div class="w-12 h-12 bg-[#e8f5e9] text-[#2e7d32] rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<div class="text-2xl font-bold text-on-surface">32</div>
+<div class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Cursos Aprobados</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center space-x-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<div>
+<div class="text-2xl font-bold text-on-surface">6</div>
+<div class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">En Curso</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center space-x-4">
+<div class="w-12 h-12 bg-surface-container-high text-outline rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hourglass_empty</span>
+</div>
+<div>
+<div class="text-2xl font-bold text-on-surface">14</div>
+<div class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Pendientes</div>
+</div>
+</div>
+</div>
+<!-- Curriculum Grid (Bento Grid Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+<!-- Semester Section 1 -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold font-manrope text-on-surface flex items-center">
+                            Primer Semestre
+                            <span class="ml-3 px-2 py-0.5 bg-green-100 text-green-800 text-[10px] font-black rounded-md uppercase">Completado</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Card Approved -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-green-500 shadow-sm hover:scale-[1.02] transition-transform cursor-default">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">FIS-101</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Física Mecánica</h3>
+<div class="flex justify-between items-center">
+<span class="bg-[#e8f5e9] text-[#2e7d32] text-[10px] font-bold px-2 py-0.5 rounded uppercase">Aprobado</span>
+<span class="text-xs font-bold text-on-surface">4.5</span>
+</div>
+</div>
+<!-- Card Approved -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-green-500 shadow-sm hover:scale-[1.02] transition-transform">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">MAT-110</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Cálculo Diferencial</h3>
+<div class="flex justify-between items-center">
+<span class="bg-[#e8f5e9] text-[#2e7d32] text-[10px] font-bold px-2 py-0.5 rounded uppercase">Aprobado</span>
+<span class="text-xs font-bold text-on-surface">4.2</span>
+</div>
+</div>
+<!-- Card Approved -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-green-500 shadow-sm hover:scale-[1.02] transition-transform">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">PRO-101</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Algoritmos y Programación</h3>
+<div class="flex justify-between items-center">
+<span class="bg-[#e8f5e9] text-[#2e7d32] text-[10px] font-bold px-2 py-0.5 rounded uppercase">Aprobado</span>
+<span class="text-xs font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<!-- Card Approved -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-green-500 shadow-sm hover:scale-[1.02] transition-transform">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">HUM-101</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Comunicación Efectiva</h3>
+<div class="flex justify-between items-center">
+<span class="bg-[#e8f5e9] text-[#2e7d32] text-[10px] font-bold px-2 py-0.5 rounded uppercase">Aprobado</span>
+<span class="text-xs font-bold text-on-surface">3.9</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Semester Section 2 -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold font-manrope text-on-surface flex items-center">
+                            Segundo Semestre
+                            <span class="ml-3 px-2 py-0.5 bg-primary-container text-on-primary-container text-[10px] font-black rounded-md uppercase">En Curso</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Card In Progress -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-primary shadow-sm hover:scale-[1.02] transition-transform">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">MAT-120</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Cálculo Integral</h3>
+<div class="flex justify-between items-center">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded uppercase">En curso</span>
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+</div>
+</div>
+<!-- Card In Progress -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-primary shadow-sm hover:scale-[1.02] transition-transform">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">PRO-201</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Programación Orientada a Objetos</h3>
+<div class="flex justify-between items-center">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded uppercase">En curso</span>
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+</div>
+</div>
+<!-- Card In Progress -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-primary shadow-sm hover:scale-[1.02] transition-transform">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">FIS-201</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Electricidad y Magnetismo</h3>
+<div class="flex justify-between items-center">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded uppercase">En curso</span>
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+</div>
+</div>
+<!-- Card Pending (Prerequisite met) -->
+<div class="bg-surface-container-low p-4 rounded-xl border-l-4 border-outline-variant/30 opacity-70">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">EST-101</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Probabilidad y Estadística</h3>
+<div class="flex justify-between items-center">
+<span class="bg-surface-container-high text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase">Pendiente</span>
+<span class="material-symbols-outlined text-outline text-sm">lock_open</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Semester Section 3 (Future) -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold font-manrope text-on-surface flex items-center">
+                            Tercer Semestre
+                            <span class="ml-3 px-2 py-0.5 bg-surface-container-high text-on-surface-variant text-[10px] font-black rounded-md uppercase">Próximo</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Card Pending Locked -->
+<div class="bg-surface-container-low p-4 rounded-xl border-l-4 border-outline-variant/20 opacity-50">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">DAT-301</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Estructuras de Datos</h3>
+<div class="flex justify-between items-center">
+<span class="text-outline text-[10px] font-bold uppercase">Pendiente</span>
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+</div>
+<!-- Card Pending Locked -->
+<div class="bg-surface-container-low p-4 rounded-xl border-l-4 border-outline-variant/20 opacity-50">
+<div class="text-[10px] font-bold text-outline uppercase mb-1">MAT-310</div>
+<h3 class="text-sm font-bold text-on-surface mb-3 leading-tight">Ecuaciones Diferenciales</h3>
+<div class="flex justify-between items-center">
+<span class="text-outline text-[10px] font-bold uppercase">Pendiente</span>
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommendation Sidebar Card -->
+<aside class="space-y-6">
+<div class="bg-gradient-to-br from-primary to-primary-dim p-8 rounded-2xl text-white shadow-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="text-xl font-bold mb-3 font-manrope">Próxima Inscripción</h3>
+<p class="text-blue-100 text-sm mb-6 leading-relaxed">Según tu progreso, te recomendamos priorizar <strong>Estructuras de Datos</strong> y <strong>Cálculo Integral</strong> para no retrasar tus prerrequisitos de quinto semestre.</p>
+<button class="bg-white text-primary px-6 py-2.5 rounded-lg text-sm font-bold hover:shadow-lg transition-all active:scale-95">Ver Recomendación Detallada</button>
+</div>
+<!-- Abstract Background Decoration -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all"></div>
+<span class="material-symbols-outlined absolute right-6 top-6 text-6xl text-white/10" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="bg-tertiary-container/30 p-6 rounded-2xl border border-tertiary-container/50">
+<h3 class="text-sm font-bold text-on-tertiary-container mb-4 font-manrope uppercase tracking-widest">Información de Carrera</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-3 border-b border-tertiary-container/30">
+<span class="text-xs font-semibold text-on-tertiary-container/70">Promedio Acumulado</span>
+<span class="text-sm font-bold text-on-tertiary-container">4.42</span>
+</div>
+<div class="flex justify-between items-center pb-3 border-b border-tertiary-container/30">
+<span class="text-xs font-semibold text-on-tertiary-container/70">Créditos Faltantes</span>
+<span class="text-sm font-bold text-on-tertiary-container">68</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-semibold text-on-tertiary-container/70">Fecha Graduación Est.</span>
+<span class="text-sm font-bold text-on-tertiary-container">Diciembre 2026</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</body></html>

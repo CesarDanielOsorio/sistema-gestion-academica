@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aprobación de Inscripciones | The Academic Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-background": "#2b3437",
+                "surface-variant": "#dbe4e7",
+                "surface-container-highest": "#dbe4e7",
+                "background": "#f8f9fa",
+                "on-primary-container": "#0f509f",
+                "surface-container-lowest": "#ffffff",
+                "tertiary": "#5e5c78",
+                "primary-fixed-dim": "#c1d5ff",
+                "error-dim": "#4e0309",
+                "surface-container-low": "#f1f4f6",
+                "surface-tint": "#255dad",
+                "error-container": "#fe8983",
+                "tertiary-fixed": "#d5d1f2",
+                "error": "#9f403d",
+                "secondary-dim": "#515359",
+                "outline": "#737c7f",
+                "surface-container": "#eaeff1",
+                "on-secondary-fixed": "#3d3f45",
+                "surface": "#f8f9fa",
+                "secondary-fixed": "#e2e2e9",
+                "on-error-container": "#752121",
+                "on-secondary-container": "#505157",
+                "tertiary-fixed-dim": "#c7c3e3",
+                "on-secondary": "#f9f8ff",
+                "primary-fixed": "#d7e2ff",
+                "on-tertiary-container": "#484661",
+                "secondary-fixed-dim": "#d4d4db",
+                "on-error": "#fff7f6",
+                "on-surface": "#2b3437",
+                "on-secondary-fixed-variant": "#5a5b61",
+                "on-primary-fixed": "#003e81",
+                "primary-dim": "#1151a0",
+                "primary-container": "#d7e2ff",
+                "on-surface-variant": "#586064",
+                "on-tertiary-fixed": "#35334d",
+                "on-primary": "#f7f7ff",
+                "surface-bright": "#f8f9fa",
+                "secondary-container": "#e2e2e9",
+                "inverse-primary": "#73a3f8",
+                "on-primary-fixed-variant": "#215aaa",
+                "tertiary-container": "#d5d1f2",
+                "outline-variant": "#abb3b7",
+                "on-tertiary-fixed-variant": "#52506b",
+                "tertiary-dim": "#52506b",
+                "surface-container-high": "#e3e9ec",
+                "inverse-on-surface": "#9b9d9e",
+                "primary": "#255dad",
+                "inverse-surface": "#0c0f10",
+                "secondary": "#5d5f65",
+                "surface-dim": "#d1dce0",
+                "on-tertiary": "#fcf7ff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "display": ["Manrope"],
+                "body": ["Public Sans"],
+                "label": ["Public Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9fa; color: #2b3437; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .ghost-border { border: 1px solid rgba(171, 179, 183, 0.15); }
+        .primary-gradient { background: linear-gradient(45deg, #255dad, #1151a0); }
+        .tonal-lift { box-shadow: 0 4px 20px rgba(43, 52, 55, 0.03); }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-surface-container-low dark:bg-surface-container-low h-screen w-72 flex flex-col fixed left-0 top-0 p-6 justify-between z-40">
+<div class="space-y-8">
+<div class="flex flex-col gap-1">
+<span class="font-headline font-bold text-xl text-on-surface dark:text-on-surface tracking-tight">The Academic Atelier</span>
+<span class="text-xs text-on-surface-variant font-medium tracking-widest uppercase">University Management</span>
+</div>
+<nav class="space-y-2">
+<div class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 transition-transform rounded-lg">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body text-body-md">Dashboard</span>
+</div>
+<!-- ACTIVE ITEM: Inscripciones / Academic Registry -->
+<div class="flex items-center gap-3 p-3 text-primary font-bold bg-surface-container-highest dark:bg-surface-container-highest rounded-lg cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-body text-body-md">Inscripciones</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 transition-transform rounded-lg">
+<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+<span class="font-body text-body-md">Course Catalog</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 transition-transform rounded-lg">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="font-body text-body-md">Faculty Directory</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 transition-transform rounded-lg">
+<span class="material-symbols-outlined" data-icon="microscope">magnification_small</span>
+<span class="font-body text-body-md">Research Grants</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 transition-transform rounded-lg">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-body text-body-md">Institutional Analytics</span>
+</div>
+</nav>
+<button class="primary-gradient text-on-primary w-full py-3 rounded-xl font-headline font-bold text-sm tracking-wide shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+                New Admission
+            </button>
+</div>
+<div class="pt-6 border-t border-outline-variant/10 space-y-2">
+<div class="flex items-center gap-3 p-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer rounded-lg">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body text-body-md">Settings</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 cursor-pointer rounded-lg">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body text-body-md">Logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 flex-1 h-screen flex flex-col overflow-y-auto bg-background">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md flex justify-between items-center w-full px-8 py-4 sticky top-0 z-30">
+<div class="flex items-center gap-6 w-1/2">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-primary/20 rounded-xl transition-all">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-lowest border-none pl-12 pr-4 py-2.5 rounded-xl font-body text-sm focus:ring-0 ghost-border" placeholder="Buscar por estudiante o ID..." type="text"/>
+</div>
+<nav class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-sm" href="#">Semesters</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-sm" href="#">Resources</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-sm" href="#">Help</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden ghost-border">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged university administrator with a kind and focused expression, set against a soft, clean architectural background of a modern library. The lighting is bright and natural, reflecting an elegant academic setting. The image uses a clean, light-mode aesthetic with soft blue and gray undertones to match a premium UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkmtgbw0pKayCJWhb9fM0Ndr803gh5EU4u6Ci9FIbPSjbVKoHirlg8YEzihQsTB4ql3GOAWE2s9W-L9adqQv1bxjcOGeImynUCWQSK3BOoveTjjpFWjsNG5qiyaM5O5M1OznXnld4yshaN19Hi53c3Bh1XCcjmSQoupOJThvw6rOrEJSthYUvCVrf7uRLPOMb1S6Qyt37xa0QRdakKWlUkGC7I2q7gz3TxxxpVm8bmrNNLkMiVq9SIms1xw-ix-lxhHw0-j8inks4V"/>
+</div>
+</div>
+</header>
+<!-- Page Header -->
+<section class="px-12 pt-12 pb-6">
+<h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface mb-2">Solicitudes de Inscripción</h1>
+<p class="text-on-surface-variant font-body text-lg max-w-2xl">Revisa y resuelve las solicitudes pendientes de los estudiantes para el ciclo académico actual.</p>
+</section>
+<!-- Internal Navigation (Tabs) -->
+<section class="px-12 flex gap-8 items-center border-b border-outline-variant/10 mb-8">
+<button class="pb-4 text-primary font-bold border-b-2 border-primary transition-all flex items-center gap-2">
+                Pendientes
+                <span class="bg-primary-container text-on-primary-container text-xs px-2 py-0.5 rounded-full">18</span>
+</button>
+<button class="pb-4 text-on-surface-variant hover:text-on-surface transition-all">Aprobadas</button>
+<button class="pb-4 text-on-surface-variant hover:text-on-surface transition-all">Rechazadas</button>
+</section>
+<!-- Content Content -->
+<section class="px-12 pb-20">
+<!-- Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex gap-4">
+<div class="relative group">
+<select class="appearance-none bg-surface-container-lowest ghost-border font-body text-sm py-2.5 pl-4 pr-10 rounded-xl focus:ring-1 focus:ring-primary focus:outline-none transition-all cursor-pointer min-w-[160px]">
+<option>Filtrar por Curso</option>
+<option>Cálculo Integral</option>
+<option>Ética Profesional</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-lg">expand_more</span>
+</div>
+<div class="relative group">
+<select class="appearance-none bg-surface-container-lowest ghost-border font-body text-sm py-2.5 pl-4 pr-10 rounded-xl focus:ring-1 focus:ring-primary focus:outline-none transition-all cursor-pointer min-w-[160px]">
+<option>Filtrar por Ciclo</option>
+<option>2024-II</option>
+<option>2024-I</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-lg">expand_more</span>
+</div>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-body text-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+                    Exportar Reporte
+                </button>
+</div>
+<!-- Table-like List -->
+<div class="space-y-4">
+<!-- Table Headers (Asymmetrical approach) -->
+<div class="grid grid-cols-12 px-6 py-2 text-on-surface-variant text-[11px] font-bold uppercase tracking-[0.1em]">
+<div class="col-span-3">Estudiante</div>
+<div class="col-span-3">Curso</div>
+<div class="col-span-2">Ciclo</div>
+<div class="col-span-2">Fecha Solicitud</div>
+<div class="col-span-2 text-right">Estado / Acciones</div>
+</div>
+<!-- Row 1 -->
+<div class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-2xl ghost-border tonal-lift group hover:bg-surface-container-low transition-colors duration-300">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline font-bold text-sm">AM</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">Alejandro Mendoza</p>
+<p class="font-body text-xs text-on-surface-variant">U2021-00845</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body text-sm text-on-surface">Arquitectura de Software</p>
+<p class="font-body text-xs text-on-surface-variant">CS-402</p>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">2024-II</span>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">12 Sep, 2024</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pendiente</span>
+<div class="flex items-center gap-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Aprobar">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 hover:bg-error/10 text-error rounded-lg transition-colors" onclick="toggleModal(true)" title="Rechazar">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-2xl ghost-border tonal-lift group hover:bg-surface-container-low transition-colors duration-300">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-headline font-bold text-sm">ES</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">Elena Salazar</p>
+<p class="font-body text-xs text-on-surface-variant">U2022-12490</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body text-sm text-on-surface">Derecho Internacional</p>
+<p class="font-body text-xs text-on-surface-variant">LW-301</p>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">2024-II</span>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">11 Sep, 2024</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pendiente</span>
+<div class="flex items-center gap-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Aprobar">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 hover:bg-error/10 text-error rounded-lg transition-colors" onclick="toggleModal(true)" title="Rechazar">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-2xl ghost-border tonal-lift group hover:bg-surface-container-low transition-colors duration-300">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold text-sm">RG</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">Ricardo Guerra</p>
+<p class="font-body text-xs text-on-surface-variant">U2020-09321</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body text-sm text-on-surface">Cálculo Vectorial</p>
+<p class="font-body text-xs text-on-surface-variant">MA-205</p>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">2024-II</span>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">10 Sep, 2024</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pendiente</span>
+<div class="flex items-center gap-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Aprobar">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 hover:bg-error/10 text-error rounded-lg transition-colors" onclick="toggleModal(true)" title="Rechazar">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-2xl ghost-border tonal-lift group hover:bg-surface-container-low transition-colors duration-300">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline font-bold text-sm">MP</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">Mariana Paredes</p>
+<p class="font-body text-xs text-on-surface-variant">U2023-15602</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body text-sm text-on-surface">Sociología de la Comunicación</p>
+<p class="font-body text-xs text-on-surface-variant">CO-112</p>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">2024-II</span>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">09 Sep, 2024</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pendiente</span>
+<div class="flex items-center gap-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Aprobar">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 hover:bg-error/10 text-error rounded-lg transition-colors" onclick="toggleModal(true)" title="Rechazar">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-2xl ghost-border tonal-lift group hover:bg-surface-container-low transition-colors duration-300">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline font-bold text-sm">JV</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">Javier Vargas</p>
+<p class="font-body text-xs text-on-surface-variant">U2021-04221</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body text-sm text-on-surface">Sistemas Operativos II</p>
+<p class="font-body text-xs text-on-surface-variant">CS-308</p>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">2024-II</span>
+</div>
+<div class="col-span-2">
+<span class="font-body text-sm text-on-surface">08 Sep, 2024</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pendiente</span>
+<div class="flex items-center gap-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Aprobar">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 hover:bg-error/10 text-error rounded-lg transition-colors" onclick="toggleModal(true)" title="Rechazar">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal "Rechazar solicitud" -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-background/40 backdrop-blur-sm hidden" id="reject-modal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl tonal-lift p-8 transform transition-all duration-300 scale-100">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h2 class="text-xl font-headline font-bold text-on-surface">Rechazar solicitud</h2>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Por favor, indica el motivo por el cual la solicitud de inscripción está siendo rechazada. Este mensaje será visible para el estudiante.
+            </p>
+<div class="mb-8">
+<label class="block font-headline font-bold text-xs text-on-surface-variant uppercase tracking-wider mb-2" for="reject-reason">Motivo del rechazo</label>
+<textarea class="w-full bg-background ghost-border rounded-xl p-4 font-body text-sm focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-none" id="reject-reason" placeholder="Ej. El estudiante no cumple con los prerrequisitos necesarios..." rows="4"></textarea>
+</div>
+<div class="flex items-center justify-end gap-4">
+<button class="px-5 py-2.5 font-headline font-bold text-sm text-on-surface-variant hover:text-on-surface transition-colors" onclick="toggleModal(false)">
+                    Cancelar
+                </button>
+<button class="bg-error-container text-on-error-container px-6 py-2.5 rounded-xl font-headline font-bold text-sm shadow-lg shadow-error/10 active:scale-95 transition-all">
+                    Confirmar rechazo
+                </button>
+</div>
+</div>
+</div>
+<script>
+        function toggleModal(show) {
+            const modal = document.getElementById('reject-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    modal.querySelector('div').classList.add('opacity-100', 'translate-y-0');
+                    modal.querySelector('div').classList.remove('opacity-0', 'translate-y-4');
+                }, 10);
+            } else {
+                modal.querySelector('div').classList.remove('opacity-100', 'translate-y-0');
+                modal.querySelector('div').classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 300);
+            }
+        }
+    </script>
+</body></html>
