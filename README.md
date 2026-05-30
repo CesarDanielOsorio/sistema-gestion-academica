@@ -1,5 +1,7 @@
 # Sistema de Gestión Académica
 
+[![CI/CD Pipeline](https://github.com/CesarDanielOsorio/sistema-gestion-academica/actions/workflows/ci.yml/badge.svg)](https://github.com/CesarDanielOsorio/sistema-gestion-academica/actions/workflows/ci.yml)
+
 Plataforma web tipo Canvas para la gestión académica universitaria: inscripción de cursos,
 registro de calificaciones, administración del pensum/prerrequisitos y generación de constancias.
 Proyecto de la **Fase 2** del curso de Ingeniería de Software (UMG).
